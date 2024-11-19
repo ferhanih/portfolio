@@ -1,0 +1,102 @@
+/* Suppression des marges et padding par défaut */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style général du menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    padding: 10px 0;
+    font-size: 1.4em;
+}
+
+.menu li {
+    position: relative; /* Permet au sous-menu de se positionner par rapport à cet élément */
+    padding: 10px 20px;
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none; /* Retirer le soulignement des liens */
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.menu li:hover {
+    background-color: #434242;
+}
+
+/* Style du sous-menu */
+.submenu {
+    display: none;             /* Cacher le sous-menu par défaut */
+    position: absolute;        /* Positionner absolument par rapport à l'élément parent */
+    top: 100%;                 /* Le sous-menu apparaît sous l'élément parent */
+    left: 0;
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 10;
+    margin-bottom: 10px;/* S'assurer que le sous-menu est au-dessus des autres éléments */
+}
+
+.menu-enfant:hover .submenu {
+    display: block;            /* Afficher le sous-menu au survol */
+}
+
+.submenu a {
+    color: white;
+    display: block;
+    list-style: none;
+    text-decoration: none; /* Retirer le soulignement des liens */
+}
+
+.submenu a:hover {
+    background-color: #007BFF; /* Fond bleu au survol des liens du sous-menu */
+}
+
+/* Style du titre */
+.titre {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Arial, sans-serif;
+}
+
+/* Style des paragraphes */
+.paragraphe {
+    display: block;
+    margin: 0 90px;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding: 0.5em 1em;
+    margin-bottom: 26px;
+}
+
+/* Style du footer */
+.footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.footer a:hover {
+    color: gray;
+}
