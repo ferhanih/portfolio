@@ -1,30 +1,48 @@
-/* Suppression des marges et padding par défaut */
-body, ul {
+/* Suppression des marges et paddings par défaut */
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%; /* Assure que le body occupe toute la hauteur de la page */
 }
 
-/* Style général du menu */
+body {
+    display: flex;
+    flex-direction: column; /* Permet d'organiser le contenu verticalement */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fond clair pour un bon contraste */
+    color: #333; /* Couleur du texte */
+}
+
+/* Conteneur principal */
+.wrapper {
+    flex: 1; /* Le contenu principal occupe l'espace disponible */
+    display: flex;
+    flex-direction: column; /* Organisation verticale */
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Menu */
 .menu {
     display: flex;
     justify-content: center;
     list-style: none;
-    font-family: Arial, sans-serif;
     background-color: #333;
     padding: 10px 0;
     font-size: 1.4em;
 }
 
 .menu li {
-    position: relative; /* Permet au sous-menu de se positionner par rapport à cet élément */
+    position: relative;
     padding: 10px 20px;
     margin: 0 15px;
 }
 
 .menu li a {
-    text-decoration: none; /* Retirer le soulignement des liens */
+    text-decoration: none;
     color: white;
-    padding: 10px;
     display: block;
 }
 
@@ -32,71 +50,117 @@ body, ul {
     background-color: #434242;
 }
 
-/* Style du sous-menu */
+/* Sous-menu */
 .submenu {
-    display: none;             /* Cacher le sous-menu par défaut */
-    position: absolute;        /* Positionner absolument par rapport à l'élément parent */
-    top: 100%;                 /* Le sous-menu apparaît sous l'élément parent */
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
     background-color: #444;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
     z-index: 10;
-    margin-bottom: 10px;/* S'assurer que le sous-menu est au-dessus des autres éléments */
 }
 
 .menu-enfant:hover .submenu {
-    display: block;            /* Afficher le sous-menu au survol */
+    display: block;
 }
 
 .submenu a {
     color: white;
+    padding: 10px 20px;
     display: block;
-    list-style: none;
-    text-decoration: none; /* Retirer le soulignement des liens */
 }
 
 .submenu a:hover {
-    background-color: #007BFF; /* Fond bleu au survol des liens du sous-menu */
+    background-color: #007BFF;
 }
 
-/* Style du titre */
+/* Présentation */
+.image-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.circular-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+}
+
 .titre {
     font-size: 1.5em;
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: Arial, sans-serif;
 }
 
-/* Style des paragraphes */
 .paragraphe {
-    display: block;
-    margin: 0 90px;
-    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-    padding: 0.5em 1em;
-    margin-bottom: 26px;
+    max-width: 800px;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
 }
 
-/* Style du footer */
+/* PDF Embed */
+embed {
+   margin: 0;
+    padding: 0;
+}
+
+/* Footer */
 .footer {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
     background-color: #333;
+    color: white;
     padding: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 .footer a {
     color: white;
     text-decoration: none;
-    line-height: 30px;
+    margin: 0 10px;
 }
 
 .footer a:hover {
     color: gray;
+}
+
+.footer img {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .paragraphe {
+        margin: 10px;
+        padding: 0.8em;
+    }
+
+    embed {
+        height: calc(100vh - 250px); /* Ajustement pour petits écrans */
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 15px;
+    }
 }
