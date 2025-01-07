@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column; /* Permet d'organiser le contenu verticalement */
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Fond clair pour un bon contraste */
+    background-color: white; /* Fond clair pour un bon contraste */
     color: #333; /* Couleur du texte */
 }
 
@@ -22,8 +22,8 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
+    margin-bottom: 40px;
 }
-
 /* Menu */
 .menu {
     display: flex;
@@ -54,8 +54,8 @@ body {
 .submenu {
     display: none;
     position: absolute;
+    text-align: center;
     top: 100%;
-    left: 0;
     background-color: #444;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -67,7 +67,6 @@ body {
 
 .submenu a {
     color: white;
-    padding: 10px 20px;
     display: block;
 }
 
@@ -99,24 +98,20 @@ body {
     letter-spacing: 2px;
 }
 
+/* Style des paragraphes */
 .paragraphe {
-    max-width: 800px;
-    padding: 1em;
-    background: white;
-    border-radius: 8px;
-}
-
-/* PDF Embed */
-embed {
-   margin: 0;
-    padding: 0;
+    display: block;
+    margin: 0 90px;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding: 0.5em 1em;
+    margin-bottom: 26px;
 }
 
 /* Footer */
 .footer {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding-bottom: 20px;
     text-align: center;
     width: 100%;
 }
@@ -146,10 +141,6 @@ embed {
         text-align: center;
     }
 
-    .menu li {
-        margin: 10px 0;
-    }
-
     .paragraphe {
         margin: 10px;
         padding: 0.8em;
@@ -163,4 +154,18 @@ embed {
         flex-direction: column;
         padding: 15px;
     }
+}
+
+.proj{
+    display: block;
+    background-color: white;
+    margin: 0 50px;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding: 30px;
+    margin-bottom: 26px;
+    margin-top: 26px;
+}
+
+.blockproj{
+    display: flex;
 }
