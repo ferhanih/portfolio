@@ -92,6 +92,10 @@ body {
     text-align: center;
 }
 
+.pair {
+    background-color: blanchedalmond;
+}
+
 .circular-image {
     width: 150px;
     height: 150px;
