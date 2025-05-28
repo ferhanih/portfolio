@@ -6,6 +6,7 @@
     <title>PortFolio Hicham FERHANI</title>
     <link rel="stylesheet" href="ressources/css/style.css">
     <link rel="icon" type="image/png" href="ressources/img/logohf.png">
+    <script defer src="ressources/script.js"></script>
 
 </head>
 <body>
@@ -31,7 +32,7 @@
     <!-- INFORMATIONS -->
         <h2 class="titre">Informations</h2>
         <div class="info-links">
-            <a href="ressources/pdf/CV%20Hicham%20Ferhani.pdf" download class="info-link cv">📄 Télécharger mon CV</a>
+            <a href="ressources/pdf/CV%20Hicham%20Ferhani.pdf" target="_blank" download class="info-link cv">📄 Télécharger mon CV</a>
             <a href="https://github.com/ferhanih" target="_blank" class="info-link github">🐱 GitHub</a>
             <a href="https://gitlabinfo.iutmontp.univ-montp2.fr/ferhanih" target="_blank" class="info-link gitlab">🦊 GitLab</a>
         </div>
@@ -52,7 +53,7 @@
         <p >
             Au cours de ma formation, j’ai travaillé sur des <b>projets pratiques</b>, notamment la <b>création de sites web</b> en <b>HTML</b>, <b>CSS</b> ainsi qu’en <b>PHP</b>.
             J'ai acquis des connaissances en <b>SQL</b> ainsi qu'en <b>pl/sql</b> pour la gestion de bases de données.
-            J’ai également travaillé sur de nombreux projets de <b>création d’applications</b> (<a href="projet2.html"><b>Sudoku</b></a>, <a href="projet4.html"><b>EC3</b></a>, <a href="projet3.html"><b>Trains</b></a>...) où j’ai pu développer mes connaissances en <b>Java</b> et <b>JavaFX</b>.
+            J’ai également travaillé sur de nombreux projets de <b>création d’applications</b> (<a href="projets/projet2.html"><b>Sudoku</b></a>, <a href="projets/projet4.html"><b>EC3</b></a>, <a href="projets/projet3.html"><b>Trains</b></a>...) où j’ai pu développer mes connaissances en <b>Java</b> et <b>JavaFX</b>.
             <br>Grâce à ces projets, j’ai développé des <b>compétences techniques</b> et une <b>capacité d’adaptation</b> qui me permettent d’apprendre rapidement de <b>nouveaux outils et langages</b>.</p>
         <p>
             <br><b>Rigoureux</b>, <b>curieux</b> et <b>à l'aise avec le travail en équipe</b> ainsi qu’avec la <b>méthode agile</b>, je possède également une bonne maîtrise de <b>GitLab</b>, <b>GitHub</b> et <b>Docker</b>, ainsi que des <b>IDE</b> comme <b>Visual Studio Code</b> et les <b>outils JetBrains</b>.
@@ -89,6 +90,16 @@
     </p>
     </section>
 
+    <!-- Compétences validées -->
+    <h2 class="titre">Compétences validées</h2>
+    <section class="section-bloc">
+        <ul class="competences-list">
+            <li class="valide"><a href="">Compétence 1</a></li>
+            <li class="non-valide">Compétence 2</li>
+        </ul>
+    </section>
+
+
 
     <!-- PROJETS -->
     <h2 class="titre" >Projets réalisés</h2>
@@ -96,33 +107,33 @@
         <div class="projet">
             <h3>Gestion poursuite d'étude</h3>
             <p> Application web permettant de gérer la poursuite d'étude des étudiants (candidatures etc).</p>
-            <a href="projet1.html">[En savoir plus..]</a>
+            <a href="projets/projet1.html">[En savoir plus..]</a>
         </div>
         <div class="projet"><h3>Sudoku</h3>
             <p> Le Sudoku est un jeu de réflexion où le joueur remplit une grille de 9x9 cases.</p>
-            <a href="projet2.html">[En savoir plus..]</a>
+            <a href="projets/projet2.html">[En savoir plus..]</a>
         </div>
         <div class="projet"><h3>TRAINS</h3>
             <p> Le jeu Trains est un jeu de stratégie ou le but est de marquer le plus de points possible.</p>
-            <a href="projet3.html">[En savoir plus..]</a>
+            <a href="projets/projet3.html">[En savoir plus..]</a>
         </div>
     <div class="projet" >
         <h3>EC3</h3>
         <p>  Il s'agit d'un <b>jeu de cartes</b> qui se joue avec un <b>paquet unique</b> où chaque carte possède :<br>
             une <b>figure répétée</b> (1 à 3 fois), une <b>texture</b> et une <b>couleur</b>.<br>
             Le but du jeu est de trouver des <b>ensembles de trois cartes</b>, appelés <b>"EC3"</b>.<br></p>
-        <a href="projet4.html">[En savoir plus..]</a>
+        <a href="projets/projet4.html">[En savoir plus..]</a>
     </div>
     </section>
 
 
 
 
-</div>
+    <button id="scrollTopBtn" aria-label="Retour en haut"> Retour en haut ⬆️</button>
 
 <!-- FOOTER -->
 <footer class="footer">
-    <a href="#debutpage">© 2025 Hicham Ferhani. Tous droits réservés.</a>
+    <a>© 2025 Hicham Ferhani. Tous droits réservés.</a>
 </footer>
 </section>
 </body>
