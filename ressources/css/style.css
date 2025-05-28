@@ -209,3 +209,187 @@ body {
 .blockproj {
     display: flex;
 }
+.contact-section {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    max-width: 650px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-section h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin: 1.5rem 0 1rem;
+    color: #222;
+}
+
+.contact-link,
+.info-link {
+    display: inline-block;
+    margin: 0.5rem 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-link.email {
+    color: #0044cc;
+    background-color: #eaf1ff;
+}
+
+.contact-link.email:hover {
+    background-color: #d0e0ff;
+}
+
+.contact-link.linkedin {
+    color: white;
+    background-color: #0077b5;
+}
+
+.contact-link.linkedin:hover {
+    background-color: #005f8d;
+}
+
+
+.info-link.cv {
+    background-color: #f3f3f3;
+    color: #222;
+}
+
+.info-link.cv:hover {
+    background-color: #e0e0e0;
+}
+
+.info-link.github {
+    background-color: #24292e;
+    color: white;
+}
+
+.info-link.github:hover {
+    background-color: #1b1f23;
+}
+
+.info-link.gitlab {
+    background-color: #fc6d26;
+    color: white;
+}
+
+.info-link.gitlab:hover {
+    background-color: #e0530d;
+}
+.section-bloc {
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* comme .paragraphe */
+    border-radius: 16px;
+    max-width: calc(100% - 180px); /* 100% - (margin 90px gauche + droite) pour coller à la marge */
+    margin: 0 90px 26px 90px; /* identique à .paragraphe (margin-bottom 26px) */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1em; /* même taille que .paragraphe */
+    line-height: 1.8; /* même interligne que .paragraphe */
+    padding: 20px; /* identique */
+    color: #444; /* tu peux garder cette couleur, elle est proche */
+}
+
+/* Garde les styles internes, mais ajuste les paddings à 0 pour ne pas cumuler */
+.section-bloc p {
+    padding: 0;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+.section-bloc p + p {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.section-bloc ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 90%;
+    text-align: left;
+}
+
+.section-bloc li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.8;
+}
+
+.section-bloc li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #0077b5;
+    font-size: 1rem;
+}
+
+.section-bloc h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.section-projet {
+    background-color: white;
+    padding: 30px;    margin: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 300px;
+    transition: transform 0.2s;
+}
+
+.section-projet:hover {
+    transform: translateY(-5px);
+}
+
+.section-projet h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-projet a {
+    color: blue;
+    text-decoration: underline;
+}
+#projets {
+    display: flex;
+    gap: 15px;             /* espace entre les blocs */
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 30px;   /* marge en dessous de la section projets */
+
+}
+
+.projet {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;          /* largeur fixe pour mini bloc */
+    transition: transform 0.3s ease;
+}
+
+.projet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+body {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+}
