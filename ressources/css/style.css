@@ -484,3 +484,32 @@
         font-weight: bold;
         font-size: 1.2em;
     }
+    /* Styles pour les images "trace" qui accompagnent le texte */
+    .trace {
+        display: block;
+        max-width: 400px;      /* Largeur max pour garder une taille raisonnable */
+        width: 100%;           /* Adaptation à la largeur du conteneur */
+        margin: 1.5rem auto;   /* Centrer avec marge verticale */
+        border: 2px solid #444; /* Bordure sombre */
+        border-radius: 8px;     /* Bords arrondis */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Légère ombre portée */
+    }
+
+    /* Légende sous l'image */
+    .trace-caption {
+        text-align: center;
+        font-style: italic;
+        color: #666;
+        margin-top: 0.3rem;
+        font-size: 0.9rem;
+        font-family: Arial, sans-serif;
+    }
+    img.trace {
+        transition: transform 0.3s ease-in-out;
+        display: inline-block;
+    }
+
+    img.trace:hover {
+        transform: scale(2.5);
+        z-index: 1;
+    }
