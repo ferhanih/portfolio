@@ -280,6 +280,16 @@
         background-color: darkred;
         color: white;
     }
+    .info-link.accueil {
+        background-color: gray;
+        color: white;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .info-link.accueil:hover {
+        background-color: darkgrey;
+        color: white;
+    }
 
     .info-link.next {
         background-color: green;
