@@ -1,11 +1,393 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio d'apprentissage</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #222;
+            background: #fff;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ── Sidebar ── */
+        nav {
+            width: 240px;
+            min-width: 240px;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem 1.2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        nav h2 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #aaa;
+            margin-bottom: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        nav a {
+            display: block;
+            color: #cdd;
+            text-decoration: none;
+            font-size: 0.88rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+        nav a.home { color: #fff; font-weight: 600; font-size: 1rem; margin-bottom: 1rem; }
+
+        /* ── Main content ── */
+        main {
+            flex: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: #111;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.8rem;
+        }
+
+        /* Compétence block */
+        .competence {
+            margin-bottom: 3.5rem;
+        }
+
+        .competence h2 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #ddd;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .badge-valide {
+            display: inline-block;
+            background: #22c55e;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        /* AC block */
+        .ac {
+            margin-bottom: 2rem;
+        }
+
+        .ac h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #333;
+        }
+
+        .ac p {
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        /* Trace / image placeholder */
+        .trace {
+            margin: 1.2rem 0;
+        }
+
+        .trace img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: block;
+            cursor: zoom-in;
+            transition: transform 0.2s;
+        }
+
+        .trace img:hover { transform: scale(1.02); }
+
+        .trace p {
+            font-style: italic;
+            font-size: 0.88rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        /* Conclusion block */
+        .conclusion {
+            margin-top: 1.5rem;
+            padding: 1rem 1.2rem;
+            background: #f7f7f7;
+            border-left: 3px solid #ccc;
+            border-radius: 0 4px 4px 0;
+            color: #444;
+            font-style: italic;
+        }
+
+        /* Back to top */
+        .back-top {
+            display: block;
+            text-align: right;
+            margin-top: 3rem;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-top:hover { color: #000; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #999;
+            font-size: 0.82rem;
+            border-top: 1px solid #eee;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 700px) {
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; position: static; flex-direction: row; flex-wrap: wrap; padding: 1rem; }
+            main { padding: 1.5rem 1rem; }
+        }
+    </style>
 </head>
 <body>
+
+<!-- ── Sidebar navigation ── -->
+<nav>
+    <a class="home" href="../index.html">← Accueil</a>
+
+    <h2>Compétences</h2>
+    <a href="#realiser">Réaliser</a>
+    <a href="#realiser-ac1">AC1 – Architectures adaptées</a>
+    <a href="#realiser-ac2">AC2 – Faire évoluer</a>
+    <a href="#realiser-ac3">AC3 – Production</a>
+
+    <h2>&nbsp;</h2>
+    <a href="#optimiser">Optimiser</a>
+    <a href="#optimiser-ac1">AC1 – Métriques</a>
+    <a href="#optimiser-ac2">AC2 – Profiler</a>
+    <a href="#optimiser-ac3">AC3 – Bibliothèques</a>
+
+    <h2>&nbsp;</h2>
+    <a href="#collaborer">Collaborer</a>
+    <a href="#collaborer-ac1">AC1 – Veille numérique</a>
+    <a href="#collaborer-ac3">AC3 – Conduite du changement</a>
+    <a href="#collaborer-ac4">AC4 – Management de projet</a>
+</nav>
+
+<!-- ── Main ── -->
+<main>
+    <h1>Portfolio d'apprentissage</h1>
+
+    <!-- ════════════════════════════════════
+         COMPÉTENCE : RÉALISER
+    ════════════════════════════════════ -->
+    <section class="competence" id="realiser">
+        <h2>Compétence – Réaliser <span class="badge-valide">✓ Validé</span></h2>
+        <p><em>Niveau 3 — Adapter des applications sur un ensemble de supports (embarqué, web, mobile, IoT…)</em></p>
+
+        <!-- AC1 -->
+        <div class="ac" id="realiser-ac1">
+            <h3>AC1 – Choisir et implémenter les architectures adaptées &nbsp;<small style="font-weight:400;color:#888;">(CE1.04)</small></h3>
+            <p>
+                Durant le 5ème semestre, nous avons travaillé sur des projets tels que MyAvatar, dans lesquels nous avons adapté des architectures particulières en séparant le front-end ainsi que le back-end. Nous avons également travaillé sur des projets en appliquant une architecture MVC lors des 3ème et 4ème semestres. Ces architectures nous permettaient d'avoir un code plus clair, ce qui facilitait la maintenance ainsi que l'évolution de l'application. Tout cela nous permettait donc de veiller à la qualité du code et à sa documentation.
+            </p>
+
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace1.webp" alt="Trace à remplacer" />
+                <p>Trace 1 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <!-- AC2 -->
+        <div class="ac" id="realiser-ac2">
+            <h3>AC2 – Faire évoluer une application existante &nbsp;<small style="font-weight:400;color:#888;">(CE1.01 & CE1.04)</small></h3>
+            <p>
+                Durant notre deuxième année de BUT, nous avons travaillé sur un projet nommé <em>VeryBadSplit</em>, une application de gestion des dépenses. Dans la première phase de ce projet, nous avions pour objectif de trouver et documenter les potentiels problèmes de l'application.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace2.webp" alt="Trace à remplacer" />
+                <p>Trace 2 : (remplacer par la capture correspondante)</p>
+            </div>
+            <p>
+                Dans la deuxième phase, en respectant les besoins décrits par le client, nous avons amélioré l'application en réglant les différents problèmes : la qualité du code, l'architecture MVC, et en rendant l'interface utilisateur réactive. Nous avons également, en appliquant les principes algorithmiques, amélioré l'algorithme de calcul des dettes de l'application.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace3.webp" alt="Trace à remplacer" />
+                <p>Trace 3 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <!-- AC3 -->
+        <div class="ac" id="realiser-ac3">
+            <h3>AC3 – Intégrer des solutions dans un environnement de production</h3>
+            <p>
+                Durant nos années à l'IUT, nous avons travaillé sur des projets nécessitant le déploiement de l'application web sur le serveur de l'IUT, comme le projet MyAvatar, ou encore une SAÉ portant sur la réalisation d'une application web critique sur un sujet choisi. Ces expériences m'ont permis de comprendre les contraintes liées à un environnement de production réel, notamment en termes de configuration du serveur, de gestion des accès, et de bon fonctionnement de l'application une fois déployée.
+            </p>
+            <p>
+                J'ai également eu l'occasion de déployer mon site portfolio en utilisant GitHub Pages. Cette mise en production m'a amené à prendre en compte des aspects tels que la structure des fichiers, la compatibilité avec un hébergement statique, ainsi que l'accessibilité du site pour les utilisateurs.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace4.webp" alt="Trace à remplacer" />
+                <p>Trace 4 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            J'estime avoir validé cette compétence. Au fil des projets et des SAÉ, j'ai pu mettre en pratique les différents apprentissages critiques qui la composent, et je me sens aujourd'hui globalement à l'aise avec chacun d'eux. Les notions d'architecture, d'évolution d'application et de déploiement en production ne me posent plus de difficultés majeures.
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         COMPÉTENCE : OPTIMISER
+    ════════════════════════════════════ -->
+    <section class="competence" id="optimiser">
+        <h2>Compétence – Optimiser <span class="badge-valide" style="background:#f97316;">⚠ Quasiment validé</span></h2>
+        <p><em>Niveau 3 — Analyser et optimiser des applications</em></p>
+
+        <!-- AC1 -->
+        <div class="ac" id="optimiser-ac1">
+            <h3>AC1 – Anticiper les résultats de diverses métriques &nbsp;<small style="font-weight:400;color:#888;">(CE2.02)</small></h3>
+            <p>
+                Au cours de notre BUT, nous avons acquis plusieurs compétences en optimisation des performances applicatives, notamment à travers nos enseignements en bases de données et en développement web.
+            </p>
+            <p>
+                En bases de données, nous avons étudié l'utilisation des index, qui permettent d'accélérer significativement l'exécution des requêtes en évitant un parcours complet des tables. Nous avons ainsi appris à anticiper les colonnes fréquemment interrogées afin d'y appliquer une indexation adaptée.
+            </p>
+            <p>
+                En développement web, nous avons également abordé la notion de pagination, qui consiste à limiter le volume de données retourné par une requête. Plutôt que de récupérer l'intégralité d'une liste d'utilisateurs ou de produits en une seule fois, cette technique permet de charger les données par blocs, améliorant ainsi les performances de l'application et l'expérience utilisateur.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c4/trace2.webp" alt="Trace à remplacer" />
+                <p>Trace 1 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <!-- AC2 -->
+        <div class="ac" id="optimiser-ac2">
+            <h3>AC2 – Profiler, analyser et justifier le comportement d'un code existant &nbsp;<small style="font-weight:400;color:#888;">(CE2.03)</small></h3>
+            <p>
+                Dès notre première année de BUT, nous avons été initiés à l'utilisation des outils de développement intégrés aux navigateurs (DevTools). Ces outils nous ont permis d'analyser le comportement de nos pages web, d'inspecter les requêtes HTTP, de mesurer les temps de chargement et d'identifier les éventuels goulots d'étranglement impactant les performances de nos applications.
+            </p>
+            <p>
+                Nous avons également appris à utiliser les outils de débogage intégrés aux IDE (environnements de développement intégrés), tels que les points d'arrêt, l'inspection des variables et le suivi pas à pas de l'exécution. Ces outils nous ont permis d'analyser le comportement d'un code existant, de comprendre sa logique d'exécution et d'identifier précisément l'origine des erreurs ou des inefficacités.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c4/trace3.webp" alt="Trace à remplacer" />
+                <p>Trace 2 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <!-- AC3 -->
+        <div class="ac" id="optimiser-ac3">
+            <h3>AC3 – Choisir et utiliser des bibliothèques dédiées au domaine d'application &nbsp;<small style="font-weight:400;color:#888;">(CE2.04)</small></h3>
+            <p>
+                Durant la 3ème année, n'ayant pas d'alternance, nous avons travaillé sur une SAÉ en intelligence artificielle dont l'objectif était de concevoir des agents capables de résoudre des jeux en 2D. Pour cela, nous avons utilisé la bibliothèque Python <strong>Gymnasium</strong> développée par OpenAI, qui propose différents environnements d'apprentissage, déterministes ou non, tels que Taxi ou CartPole-v1.
+            </p>
+            <p>
+                L'utilisation de cette bibliothèque nous a permis de nous concentrer sur la conception et l'optimisation des algorithmes d'apprentissage tels que SARSA ou encore MCTS, sans avoir à implémenter nous-mêmes les environnements de simulation. Ce choix illustre la capacité à sélectionner des outils adaptés au problème posé, en s'appuyant sur des solutions existantes robustes et reconnues.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c4/trace4.webp" alt="Trace à remplacer" />
+                <p>Trace 3 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+        <div class="conclusion">
+            Je me sens généralement à l'aise avec cette compétence, mais j'éprouve encore certaines difficultés à appliquer les bonnes pratiques afin d'avoir une application performante.
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         COMPÉTENCE : COLLABORER
+    ════════════════════════════════════ -->
+    <section class="competence" id="collaborer">
+        <h2>Compétence – Collaborer <span class="badge-valide">✓ Validé</span></h2>
+        <p><em>Niveau 3 — Manager une équipe informatique</em></p>
+
+        <!-- AC1 -->
+        <div class="ac" id="collaborer-ac1">
+            <h3>AC1 – Organiser et partager une veille numérique</h3>
+            <p>
+                Durant le semestre 5, nous avons réalisé des veilles numériques sur trois thèmes. Ainsi, toutes les deux semaines, nous publiions un post sur une nouvelle informatique concernant l'un des trois thèmes choisis. Cette veille nous a permis d'apprendre à chercher, vérifier la fiabilité des sources et à consulter les actualités informatiques, ce qui est essentiel dans le monde du développement afin de rester à jour sur les changements et nouveautés.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace5.webp" alt="Trace à remplacer" />
+                <p>Trace 1 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <!-- AC3 -->
+        <div class="ac" id="collaborer-ac3">
+            <h3>AC3 – Guider la conduite du changement informatique &nbsp;<small style="font-weight:400;color:#888;">(CE6.04)</small></h3>
+            <p>
+                Dans le cadre de la SAE 3.04 portant sur l'intelligence artificielle, nous avons été amenés à présenter et justifier nos choix algorithmiques auprès de différents interlocuteurs. Il s'agissait notamment d'expliquer pourquoi certains algorithmes avaient été retenus plutôt que d'autres pour améliorer les performances de notre agent dans sa prise de décision.
+            </p>
+            <p>
+                Cet exercice nous a conduits à adapter notre discours selon le profil de notre interlocuteur : un langage technique et précis face à des enseignants ou des pairs, et une communication plus vulgarisée et orientée résultats face à un public moins familier avec les concepts algorithmiques. Cette capacité d'adaptation est essentielle dans un contexte professionnel.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace6.webp" alt="Trace à remplacer" />
+                <p>Trace 2 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+
+        <!-- AC4 -->
+        <div class="ac" id="collaborer-ac4">
+            <h3>AC4 – Accompagner le management de projet informatique</h3>
+            <p>
+                Au cours de nos années à l'IUT, nous avons réalisé plusieurs projets en groupe nécessitant organisation, communication et coordination. L'un des plus formateurs fut, durant le 4ème semestre, le développement d'une application de gestion de poursuite d'études. Pour mener ce projet à bien, nous avons appliqué la méthode <strong>SCRUM</strong>, qui consiste à découper le travail en sprints. Cette approche nous permettait d'obtenir des retours réguliers sur l'état de l'application et d'ajuster notre travail pour coller au plus près des attentes du client.
+            </p>
+            <p>
+                Pour faciliter la communication au sein de l'équipe, nous avons mis en place un serveur Discord dédié au projet et utilisé <strong>Trello</strong> pour organiser et distribuer les tâches. Nous tenions également des réunions quotidiennes afin de synchroniser notre avancement, identifier les blocages et nous entraider face aux difficultés rencontrées.
+            </p>
+            <p>
+                Enfin, nous nous sommes réparti des rôles bien définis : le Scrum Master veillait au bon déroulement de la méthode, le Product Owner priorisait les fonctionnalités en fonction des besoins du client, et les développeurs concevaient, implémentaient et testaient les fonctionnalités définies à chaque sprint.
+            </p>
+            <div class="trace">
+                <img src="https://hichamferhani.fr/ressources/img/c3/trace1.webp" alt="Trace à remplacer" />
+                <p>Trace 3 : (remplacer par la capture correspondante)</p>
+            </div>
+        </div>
+        <div class="conclusion">
+            J'estime avoir validé cette compétence. La veille numérique, la communication adaptée selon l'interlocuteur et le travail en équipe avec des méthodes agiles sont des pratiques que j'ai pu exercer régulièrement tout au long de ma formation. Je me sens à l'aise avec les AC de cette compétence et je considère avoir développé de réelles aptitudes collaboratives et managériales.
+        </div>
+    </section>
+
+    <a class="back-top" href="#">Retour en haut ⬆️</a>
+
+    <footer>© 2026 Hicham Ferhani. Tous droits réservés.</footer>
+</main>
 
 </body>
 </html>
